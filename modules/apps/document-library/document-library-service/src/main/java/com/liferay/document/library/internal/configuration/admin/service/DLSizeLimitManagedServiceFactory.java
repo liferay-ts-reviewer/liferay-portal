@@ -71,7 +71,6 @@ public class DLSizeLimitManagedServiceFactory implements ManagedServiceFactory {
 		return _companyMimeTypeSizeLimitsMap.computeIfAbsent(
 			companyId, this::_computeCompanyMimeTypeSizeLimit);
 	}
-
 	public long getCompanyMimeTypeSizeLimit(long companyId, String mimeType) {
 		if (Validator.isNull(mimeType)) {
 			return 0;
