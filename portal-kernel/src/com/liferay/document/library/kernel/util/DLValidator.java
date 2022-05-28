@@ -23,6 +23,7 @@ import com.liferay.document.library.kernel.exception.SourceFileNameException;
 
 import java.io.File;
 import java.io.InputStream;
+import java.util.Map;
 
 import org.osgi.annotation.versioning.ProviderType;
 
@@ -37,6 +38,8 @@ public interface DLValidator {
 	public long getMaxAllowableSize(long groupId, String mimeType);
 
 	public boolean isValidName(String name);
+
+	public Map<String, Long> getMimeTypeSizeLimit(long groupId);
 
 	public void validateDirectoryName(String directoryName)
 		throws FolderNameException;
