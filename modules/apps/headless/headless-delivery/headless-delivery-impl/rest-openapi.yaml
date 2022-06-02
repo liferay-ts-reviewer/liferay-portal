@@ -5251,6 +5251,7 @@ components:
                 encodingFormat:
                     description:
                         The wiki page's media format (e.g., HTML, BBCode, etc.).
+                    example: text/x-wiki
                     type: string
                 externalReferenceCode:
                     description:
@@ -5399,7 +5400,7 @@ components:
 info:
     description:
         "A Java client JAR is available for use with the group ID 'com.liferay', artifact ID
-        'com.liferay.headless.delivery.client', and version '4.0.49'."
+        'com.liferay.headless.delivery.client', and version '4.0.50'."
     license:
         name: "Apache 2.0"
         url: "http://www.apache.org/licenses/LICENSE-2.0.html"

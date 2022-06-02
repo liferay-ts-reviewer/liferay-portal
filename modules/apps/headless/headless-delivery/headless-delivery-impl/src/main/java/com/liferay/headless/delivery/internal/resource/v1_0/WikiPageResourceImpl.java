@@ -342,10 +342,16 @@ public class WikiPageResourceImpl extends BaseWikiPageResourceImpl {
 	private Map<String, Serializable> _getExpandoBridgeAttributes(
 		WikiPage wikiPage) {
 
-		return CustomFieldsUtil.toMap(
-			com.liferay.wiki.model.WikiPage.class.getName(),
-			contextCompany.getCompanyId(), wikiPage.getCustomFields(),
-			contextAcceptLanguage.getPreferredLocale());
+		try {
+			return CustomFieldsUtil.toMap(
+				com.liferay.wiki.model.WikiPage.class.getName(),
+				contextCompany.getCompanyId(), wikiPage.getCustomFields(),
+				contextAcceptLanguage.getPreferredLocale());
+		}
+		catch (Exception exception) {
+			throw new BadRequestException(
+				"The custom field value is invalid", exception);
+		}
 	}
 
 	private String _toFormat(String encodingFormat) {
