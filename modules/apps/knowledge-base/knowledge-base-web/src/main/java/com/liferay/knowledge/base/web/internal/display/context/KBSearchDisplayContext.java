@@ -101,12 +101,10 @@ public class KBSearchDisplayContext {
 			_httpServletRequest);
 
 		searchContext.setAttribute("paginationType", "regular");
-		searchContext.setEnd(_searchContainer.getEnd());
 		searchContext.setIncludeInternalAssetCategories(true);
 		searchContext.setKeywords(getKeywords());
 		searchContext.setSorts(
 			KBUtil.getKBArticleSorts(getOrderByCol(), getOrderByType()));
-		searchContext.setStart(_searchContainer.getStart());
 
 		Indexer<KBArticle> indexer = IndexerRegistryUtil.getIndexer(
 			KBArticle.class);
@@ -140,6 +138,9 @@ public class KBSearchDisplayContext {
 				"no-articles-were-found-that-matched-the-keywords-x",
 				"<strong>" + HtmlUtil.escape(getKeywords()) + "</strong>",
 				false));
+
+		searchContext.setEnd(_searchContainer.getEnd());
+		searchContext.setStart(_searchContainer.getStart());
 
 		_searchContainer.setResultsAndTotal(() -> tuples, hits.getLength());
 
