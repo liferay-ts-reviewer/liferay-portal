@@ -146,6 +146,7 @@ export function parseNotifications(node) {
 			'execution-type'
 		);
 		notifications.name = parseProperty(notifications, item, 'name');
+		notifications.receptionType = parseProperty(notifications, item, 'receptionType');
 
 		let notificationTypes = parseProperty(
 			notifications,

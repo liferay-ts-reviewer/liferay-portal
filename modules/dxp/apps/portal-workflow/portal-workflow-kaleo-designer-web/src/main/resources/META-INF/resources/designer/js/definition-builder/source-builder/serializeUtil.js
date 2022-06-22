@@ -331,6 +331,7 @@ function appendXMLNotifications(buffer, notifications, nodeName, exporting) {
 			description,
 			executionType,
 			notificationTypes,
+			receptionType,
 			recipients,
 			template,
 			templateLanguage,
@@ -379,6 +380,10 @@ function appendXMLNotifications(buffer, notifications, nodeName, exporting) {
 				)
 			) {
 				recipientsAttrs.receptionType = recipients[index].receptionType;
+			}
+
+			if (!recipientsAttrs.receptionType && receptionType[0]) {
+				recipientsAttrs.receptionType = receptionType[0];
 			}
 
 			recipients[index].roleType?.forEach((item, roleTypeIndex) => {
