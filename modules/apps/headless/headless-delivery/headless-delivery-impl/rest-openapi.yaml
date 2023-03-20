@@ -5251,6 +5251,7 @@ components:
                 encodingFormat:
                     description:
                         The wiki page's media format (e.g., HTML, BBCode, etc.).
+                    example: text/x-wiki
                     type: string
                 externalReferenceCode:
                     description:
