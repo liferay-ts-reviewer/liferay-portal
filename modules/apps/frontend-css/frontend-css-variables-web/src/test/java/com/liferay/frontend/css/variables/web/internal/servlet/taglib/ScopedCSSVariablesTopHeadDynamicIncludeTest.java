@@ -56,7 +56,7 @@ public class ScopedCSSVariablesTopHeadDynamicIncludeTest {
 			new ScopedCSSVariables() {
 
 				@Override
-				public Map<String, String> getCSSVariables() {
+				public Map<String, Object> getCSSVariables() {
 					return Collections.singletonMap("color", "red");
 				}
 
@@ -108,9 +108,9 @@ public class ScopedCSSVariablesTopHeadDynamicIncludeTest {
 			new ScopedCSSVariables() {
 
 				@Override
-				public Map<String, String> getCSSVariables() {
-					return HashMapBuilder.put(
-						"color", "red"
+				public Map<String, Object> getCSSVariables() {
+					return HashMapBuilder.<String, Object>put(
+						"color", (Object)"red"
 					).build();
 				}
 
@@ -135,13 +135,13 @@ public class ScopedCSSVariablesTopHeadDynamicIncludeTest {
 			new ScopedCSSVariables() {
 
 				@Override
-				public Map<String, String> getCSSVariables() {
-					return HashMapBuilder.put(
-						"color", "green"
+				public Map<String, Object> getCSSVariables() {
+					return HashMapBuilder.<String, Object>put(
+						"color", (Object)"green"
 					).put(
-						"fixed-font", "\"Lucida Console\""
+						"fixed-font", (Object)"\"Lucida Console\""
 					).put(
-						"font", "Comic Sans"
+						"font", (Object)"Comic Sans"
 					).build();
 				}
 
@@ -154,11 +154,11 @@ public class ScopedCSSVariablesTopHeadDynamicIncludeTest {
 			new ScopedCSSVariables() {
 
 				@Override
-				public Map<String, String> getCSSVariables() {
-					return HashMapBuilder.put(
-						"color", "yellow"
+				public Map<String, Object> getCSSVariables() {
+					return HashMapBuilder.<String, Object>put(
+						"color", (Object)"yellow"
 					).put(
-						"font", "Arial"
+						"font", (Object)"Arial"
 					).build();
 				}
 
